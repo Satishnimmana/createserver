@@ -10,13 +10,10 @@ terraform {
 }
 
 terraform {
-       backend "remote" {
-          # The name of your Terraform Cloud organization.
-          organization = "Smarttechcloud"
- 
-          # The name of the Terraform Cloud workspace to store Terraform state files in.
-          workspaces {
-            name = "smartaction"
+    backend "remote" {
+      organization = "Smarttechcloud"
+    workspaces {
+        name = "smartaction"
         }
     }
 }
