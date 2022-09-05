@@ -33,8 +33,11 @@ jobs:
     - name: Terraform Init
       id: init
       run: terraform init
+    - concurrency: 
+      group: Terraform Plan
+      cancel-in-progress: true
 
-
+    - name: Terraform 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       run: terraform plan -input=false
