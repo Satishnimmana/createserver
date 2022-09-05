@@ -34,9 +34,6 @@ jobs:
       id: init
       run: terraform init
     
-    - name: Terraform Plan
-      cancel-in-progress: true
-
     - name: Terraform 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
