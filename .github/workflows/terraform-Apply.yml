@@ -3,12 +3,8 @@ name: 'Terraform-apply'
 on:
   push:
     branches:
-    - "main"
-  pull_request:
-
-permissions:
-  contents: read
-
+    -  "main"
+  
 jobs:
   terraform:
     name: 'Terraform'
@@ -34,6 +30,7 @@ jobs:
       run: terraform init
     # Generates an execution plan for Terraform
     - name: Terraform Plan
+      id: Plan
       run: terraform plan -input=false
 
       # On push to "main", build or change infrastructure according to Terraform configuration files
