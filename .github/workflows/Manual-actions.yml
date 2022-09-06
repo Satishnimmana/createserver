@@ -2,8 +2,10 @@
 name : "Terraform-Plan-manual-actions"
 
 on:
- workflow_dispatch
-
+# workflow_dispatch
+  push:
+    branches:
+    - "dev"
  
 jobs:
   terraform:
@@ -34,10 +36,7 @@ jobs:
       id: init
       run: terraform init
 
-    - name: would like terraform plan now ?
-      uses: trstringer/manual-approval@v1
-      with:
-       environment: ${{environment.Approval}}
+    
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
