@@ -3,7 +3,7 @@ name : "Terraform-Plan-manual-actions"
 
 on:
   workflow_dispatch
-  
+
 jobs:
   check_lint:
     #....
@@ -28,10 +28,10 @@ jobs:
     - name: Terraform Plan
       run: terraform plan
 
-  plan:
-    name: 'plan'
+  apply:
+    name: 'apply'
     runs-on: ubuntu-latest
-    needs: init
+    needs: plan
     environment:
       AWS_ACCESS_KEY_ID : ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY_ID: ${{ secrets.AWS_SECRET_ACCESS_KEY_ID }}
@@ -42,5 +42,5 @@ jobs:
 
     steps:
     #... checkout, setup, init terraform steps like plan
-    - name: Terraform plan
-      run: terraform plan 
+    - name: Terraform apply
+      run: terraform apply  
