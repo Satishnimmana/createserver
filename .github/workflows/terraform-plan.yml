@@ -4,7 +4,7 @@ on:
 # workflow_dispatch
   push:
     branches:
-    -   dev 
+    -  dev 
  
 jobs:
   terraform:
@@ -40,7 +40,6 @@ jobs:
      needs: init
      environment:
         name: Apply_Approval
-   steps:
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       run: terraform plan -input=false
