@@ -5,15 +5,11 @@ on:
   workflow_dispatch
 
 jobs:
-  check_lint:
-    #....
-  check_vulnerability:
-    needs: check_lint
-    #...
-  plan:
-    name: 'Plan'
+  terraform:
+    name: 'Terraform'
     runs-on: ubuntu-latest
-    needs: check_vulnerability
+  
+     
 
     steps:
     - name: Checkout
