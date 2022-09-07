@@ -1,5 +1,5 @@
 
-name : "Terraform-Plan-manual-actions"
+name : "Terraform-manual-actions"
 
 on:
   workflow_dispatch
