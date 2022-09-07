@@ -35,11 +35,10 @@ jobs:
       id: init
       run: terraform init
 
-   Plan:
-    name: 'Plan'
-    runs-on: ubuntu-latest
-    needs: init
-    environment:
+    - name: 'Plan'
+     runs-on: ubuntu-latest
+     needs: init
+     environment:
         name: Apply_Approval
    steps:
     # Generates an execution plan for Terraform
