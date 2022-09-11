@@ -10,8 +10,8 @@ jobs:
     name: 'Terraform'
     runs-on: ubuntu-latest
     env:
-    platform: dev
-    platform: prod
+       platform: dev
+       platform: prod
     
       
 
