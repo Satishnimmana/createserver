@@ -9,8 +9,9 @@ jobs:
   terraform:
     name: 'Terraform'
     runs-on: ubuntu-latest
-    environment: dev
-    environment: prod
+    env:
+    platform: dev
+    platform: prod
     
       
 
@@ -38,9 +39,9 @@ jobs:
       working-directory: aws_s3.tf
       run: |
         terraform init
-        terraform workspace new ${{environment}}
-        terraform workspace select ${{environment}} $$ terraform plan
-        terraform workspace select ${{environment}} $$ terraform apply
+        terraform workspace new ${{env.platform}}
+        terraform workspace select ${{env.platform}} $$ terraform plan
+        terraform workspace select ${{env.platform}} $$ terraform apply
 
   
     # Generates an execution plan for Terraform
